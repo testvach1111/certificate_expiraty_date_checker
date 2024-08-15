@@ -32,7 +32,6 @@ def get_expiry_date(certificate):
         print(f"Error in decoding certificate expiry date. Error {str(e)}")
         sys.exit(1)
     else:
-        expiry_date_str = str(certificate.get_notAfter().decode("ascii"))
         expiry_date = datetime.strptime(expiry_date_str, "%Y%m%d%H%M%SZ")
         return expiry_date
 
